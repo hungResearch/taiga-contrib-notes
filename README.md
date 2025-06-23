@@ -36,7 +36,13 @@ Download in your `dist/plugins/` directory of Taiga front the `taiga-contrib-not
   cd dist/
   mkdir -p plugins
   cd plugins
-  svn export "https://github.com/hungResearch/taiga-contrib-notes/trunk/frontend" "notes"
+  git clone https://github.com/hungResearch/taiga-contrib-notes.git
+  cd taiga-contrib-notes
+  git checkout tags/0.0.1
+  cp -r frontend/dist ../notes
+  cd ..
+  rm -rf taiga-contrib-notes
+
 ```
 
 Include in your `dist/conf.json` in the `contribPlugins` list the value `"plugins/notes/notes.json"`:
