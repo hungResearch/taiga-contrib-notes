@@ -1,0 +1,9 @@
+{
+    "name": "Notes",
+    "slug": "Notes",
+    "description": "Integrate Taiga with notes",
+    "type": "admin",
+    "module": "taigaContrib.notes",
+    "template": "/plugins/notes/notes.html",
+    "js": "plugins/notes/notes.js"
+}
