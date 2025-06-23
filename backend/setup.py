@@ -10,8 +10,8 @@ import versiontools_support
 from setuptools import setup, find_packages
 
 setup(
-    name = 'taiga-contrib-note',
-    version = ":versiontools:taiga_contrib_note:",
+    name = 'taiga-contrib-notes',
+    version = ":versiontools:taiga_contrib_notes:",
     description = "The Taiga plugin for note integration",
     long_description = "",
     keywords = 'taiga, note, integration',
