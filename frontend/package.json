@@ -1,0 +1,24 @@
+{
+    "name": "taiga-contrib-notes",
+    "version": "0.1.0",
+    "scripts": {
+        "build": "gulp"
+    },
+    "devDependencies": {
+        "@tailwindcss/postcss": "^4.1.8",
+        "autoprefixer": "^10.4.21",
+        "del": "^8.0.0",
+        "gulp": "^4.0.2",
+        "gulp-coffee": "^3.0.3",
+        "gulp-concat": "^2.6.1",
+        "gulp-postcss": "^9.0.1",
+        "gulp-pug": "^5.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-uglify": "^3.0.2",
+        "http-proxy-middleware": "^3.0.5",
+        "http-server": "^14.1.1",
+        "postcss": "^8.4.38",
+        "sass": "^1.73.0",
+        "tailwindcss": "^4.1.8"
+    }
+}

@@ -1,0 +1,29 @@
+div(class="note-edit-page" ng-controller="NoteEditPageController")
+  // Sidebar trái
+  div(class="sidebar")
+    p.sidebar-title Version
+    div(ng-repeat="ver in versions")
+      div.sidebar-item(
+        ng-class="{selected: selectedVersion && ver.id == selectedVersion.id}",
+        ng-click="selectVersion(ver)"
+      )
+        label Version {{ ver.version_number }}
+        span.sidebar-date {{ ver.created_at | date:'dd/MM/yyyy - HH:mm' }}
+
+    button(
+      type="button",
+      class="restore-btn mt-2",
+      ng-click="restoreSelectedVersion()",
+      ng-disabled="!selectedVersion || selectedVersion.id == note.current_version_id"
+    ) Phục hồi về version này
+
+  // Main content
+  div(class="note-main")
+    div(class="toolbar")
+      button(type="button", class="back-btn", ng-click="back()") 
+        i(class="fas fa-arrow-left") Back
+      button(type="button", class="save-btn", ng-click="save()") 
+        i(class="fas fa-upload") Save
+    input(type="text", placeholder="Title", ng-model="note.name", class="note-title")
+    div(class="editor-box")
+      textarea(id="noteContent")

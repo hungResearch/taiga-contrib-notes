@@ -1,0 +1,48 @@
+div(ng-controller="NotesListController")
+  div(class="header-bar")
+    h1(class="title") Notes
+    input(
+      type="text",
+      placeholder="Search",
+      ng-model="searchQuery",
+      class="search-input"
+    )
+
+    button(class="create-button", ng-click="goToCreate()")
+      i(class="fas fa-plus-circle")
+      | Create
+
+  table(class="note-table")
+    thead
+      tr
+        th Name
+        th Creator
+        th Created Date
+        th Last Edit Date
+        th(class="actions-col text-center") Actions
+    tbody
+      tr(ng-repeat="note in notes | filter:searchQuery")
+        td {{ note.name }}
+        td {{ note.creator_username }}
+        td {{ note.created_at | date : 'dd/MM/yyyy HH:mm' }}
+        // SỬA chỗ này: dùng hàm getUpdatedAt(note)
+        td {{ getUpdatedAt(note) | date : 'dd/MM/yyyy HH:mm' }}
+        td.actions-col
+          button(
+            ng-click="editNote(note)",
+            title="Edit",
+            class="icon-btn"
+          )
+            i(class="fas fa-edit")
+          button(
+            ng-click="downloadNote(note)",
+            title="Download",
+            class="icon-btn"
+          )
+            i(class="fas fa-download")
+          button(
+            ng-click="deleteNote(note)",
+            title="Delete",
+            class="icon-btn"
+          )
+            i(class="fas fa-trash")
