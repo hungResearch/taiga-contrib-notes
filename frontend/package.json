@@ -7,6 +7,7 @@
     "devDependencies": {
         "@tailwindcss/postcss": "^4.1.8",
         "autoprefixer": "^10.4.21",
+        "browser-sync": "^3.0.4",
         "del": "^8.0.0",
         "gulp": "^5.0.1",
         "gulp-coffee": "^3.0.3",
@@ -14,6 +15,7 @@
         "gulp-postcss": "^9.0.1",
         "gulp-pug": "^5.0.0",
         "gulp-sass": "^5.1.0",
+        "gulp-sourcemaps": "^2.6.5",
         "gulp-uglify": "^3.0.2",
         "http-proxy-middleware": "^3.0.5",
         "http-server": "^14.1.1",

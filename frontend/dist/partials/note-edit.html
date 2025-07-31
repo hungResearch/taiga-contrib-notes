@@ -1,24 +1,25 @@
 
 <div class="note-edit-page" ng-controller="NoteEditPageController">
-  <!-- Sidebar trái-->
-  <div class="sidebar">
-    <p class="sidebar-title">Version</p>
-    <div ng-repeat="ver in versions">
-      <div class="sidebar-item" ng-class="{selected: selectedVersion &amp;&amp; ver.id == selectedVersion.id}" ng-click="selectVersion(ver)">
-        <label>Version {{ ver.version_number }}</label><span class="sidebar-date">{{ ver.created_at | date:'dd/MM/yyyy - HH:mm' }}</span>
+  <div class="note-layout">
+    <div class="sidebar">
+      <p class="sidebar-title">Version</p>
+      <div ng-repeat="ver in versions">
+        <div class="sidebar-item" ng-class="{selected: selectedVersion &amp;&amp; ver.id == selectedVersion.id}" ng-click="selectVersion(ver)">
+          <label>Version {{ ver.version_number }}</label><span class="sidebar-date">{{ ver.created_at | date:'dd/MM/yyyy - HH:mm' }}</span>
+        </div>
       </div>
+      <button class="restore-btn mt-2" type="button" ng-click="restoreSelectedVersion()" ng-disabled="!selectedVersion || selectedVersion.id == note.current_version_id">Phục hồi về version này</button>
     </div>
-    <button class="restore-btn mt-2" type="button" ng-click="restoreSelectedVersion()" ng-disabled="!selectedVersion || selectedVersion.id == note.current_version_id">Phục hồi về version này</button>
-  </div>
-  <!-- Main content-->
-  <div class="note-main">
-    <div class="toolbar">
-      <button class="back-btn" type="button" ng-click="back()"> <i class="fas fa-arrow-left">Back</i></button>
-      <button class="save-btn" type="button" ng-click="save()"> <i class="fas fa-upload">Save</i></button>
-    </div>
-    <input class="note-title" type="text" placeholder="Title" ng-model="note.name"/>
-    <div class="editor-box">
-      <textarea id="noteContent"></textarea>
+    <!-- Main content-->
+    <div class="note-main">
+      <div class="toolbar">
+        <button class="back-btn" type="button" ng-click="back()"> <i class="fas fa-arrow-left"> </i>Back</button>
+        <button class="save-btn" type="button" ng-click="save()"> <i class="fas fa-upload"> </i>Save</button>
+      </div>
+      <input class="note-title" type="text" placeholder="Title" ng-model="note.name"/>
+      <div class="editor-box">
+        <textarea id="noteContent"></textarea>
+      </div>
     </div>
   </div>
 </div>
