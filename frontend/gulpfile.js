@@ -1,16 +1,16 @@
 const gulp = require('gulp');
 const coffee = require('gulp-coffee');
 const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
 const pug = require('gulp-pug');
-const autoprefixer = require('autoprefixer');
 
-// Compile CoffeeScript → JS
+// Compile CoffeeScript → JS (Dev)
 gulp.task('coffee', function () {
     return gulp.src(['src/coffee/module.coffee', 'src/coffee/controller.coffee'])
+        .pipe(sourcemaps.init())
         .pipe(coffee())
         .pipe(concat('app.js'))
-        .pipe(uglify())
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest('dist/js'));
 });
 
